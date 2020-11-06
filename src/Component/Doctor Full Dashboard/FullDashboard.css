@@ -1,0 +1,47 @@
+.sidebar{
+   background-image: linear-gradient(40deg, #19d3ae,#0fcfec);
+   position: fixed;
+}
+.sidebar li{
+   margin-bottom: 2em;
+   list-style: none;
+}
+.sidebar li:hover span{
+   display: inline-block;
+   transform: translate(5px);
+}
+.dashBoardContentBar {
+   position: absolute;
+   left: 213px;
+   background-color: #f4fdfb;
+}
+.dashBoardContentBar h3 {
+   text-align: center;
+}
+.dashBoardContent {
+   background-color: white;
+   border-radius: 5px;
+   box-shadow: 0px 0px 6px 1px lightblue;
+   margin: 0px 10px 30px 10px;
+}
+.dashboardOption{
+   font-size: 17px;
+   color: white;
+   font-weight: 400;
+   margin-bottom: 2em;
+   cursor: pointer;
+}
+.dashboardOption span{
+   transition: 0.2s;
+   margin-left: 5px;
+}
+.dashboardOption span:hover{
+   display: inline-block;
+   transform: translate(5px);
+}
+.sidebar svg{
+   margin-right: 5px;
+}
+li.dashboardOption {
+   margin-left: -20px;
+}

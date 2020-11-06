@@ -1,0 +1,13 @@
+.bannerSection{
+   background-image: url(../../images/banner-bg.png);
+   min-height: 100vh;
+   background-repeat: no-repeat;
+   background-size: contain;
+   position: relative;
+}
+
+@media (max-width:777px){
+   .bannerSection{
+       background-size: cover;
+   }
+}

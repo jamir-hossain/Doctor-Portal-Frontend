@@ -1,0 +1,9 @@
+.infos{
+    position: relative;
+    top: -100px;
+}
+
+#icon{
+    font-size: 3em;
+    padding-right: 10px;
+}
