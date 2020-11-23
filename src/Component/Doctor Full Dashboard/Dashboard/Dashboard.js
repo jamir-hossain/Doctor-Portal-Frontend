@@ -32,8 +32,12 @@ const Dashboard = (props) => {
         <div className="container-fluid row">
             <Sidebar></Sidebar>
             <div className="col-md-10 p-4 pr-5" style={{position:"absolute", right:0,backgroundColor: "#F4FDFB",height:"100%"}}>
-            <h5>Dashboard</h5>
-            <DashboardOverView></DashboardOverView>
+            {
+                props.conditional === false ? <h5>Prescription</h5> : <h5>Dashboard</h5>
+            }
+            {
+                props.conditional === false ? <div></div> : <DashboardOverView></DashboardOverView>
+            }
             <DataTable
             openPrescriptionModal={openPrescriptionModal}
             openDataEditModal={openDataEditModal}

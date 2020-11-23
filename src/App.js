@@ -35,7 +35,7 @@ function App() {
   console.log(date)
   const [appointedPatient, setAppointedPatient] = useState();
   useEffect(() => {
-    fetch('http://localhost:3005/get-appointments', {
+    fetch('https://doctor-portal-backend-server.herokuapp.com/get-appointments', {
       method:'GET',
       headers:{
         'Content-Type':'application/json'

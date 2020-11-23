@@ -11,7 +11,7 @@ const DataTable = (props) => {
    const [patientId, setPatientId] = useState(null)
    useEffect(() => {
       if (status) {
-         fetch('http://localhost:3005/add-status', {
+         fetch('https://doctor-portal-backend-server.herokuapp.com/add-status', {
             method:'PUT',
             headers:{
                'Content-Type':'application/json'

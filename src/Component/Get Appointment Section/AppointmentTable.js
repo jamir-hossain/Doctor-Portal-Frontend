@@ -38,7 +38,7 @@ const AppointmentTable = () => {
       const appointment = {...selectedAppointment, category:'appointment',  bookingDate}
       const fullData = {...patientInfo, status:"Pending", appointment:appointment}
       console.log(fullData)
-      fetch("http://localhost:3005/appointment",{
+      fetch("https://doctor-portal-backend-server.herokuapp.com/appointment",{
          method : "POST",
          headers : {
                "Content-type" : "application/json"

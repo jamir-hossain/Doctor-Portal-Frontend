@@ -10,7 +10,7 @@ const PrescriptionModal = (props) => {
     const { register, handleSubmit, errors } = useForm()
     const onSubmit = (prescription, event) => {
         // Storing Data To Database
-        fetch("http://localhost:3005/add-prescription",{
+        fetch("https://doctor-portal-backend-server.herokuapp.com/add-prescription",{
             method : "PUT",
             headers : {
                 "Content-type" : "application/json"
