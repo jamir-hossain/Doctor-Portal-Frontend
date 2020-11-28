@@ -1,3 +1,9 @@
 .container-fluid.row {
    margin-top: 70px;
 }
+.CustomStl{
+   position:absolute;
+   right:0;
+   background-color: #F4FDFB;
+   height: 100%
+}

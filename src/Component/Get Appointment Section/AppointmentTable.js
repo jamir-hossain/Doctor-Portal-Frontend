@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { AllContext, CalenderContext } from '../../App';
-import { useEffect } from 'react';
+import { CalenderContext } from '../../App';
 import data from '../../Data/appointment'
 import AppointmentCart from './AppointmentCart';
 import Modal from 'react-modal';
 import { useForm } from 'react-hook-form';
+import {Button, Dialog, DialogActions, DialogContent, DialogContentText} from '@material-ui/core/';
 
 Modal.setAppElement('#root')
 
@@ -21,10 +21,13 @@ const AppointmentTable = () => {
    const [selectedAppointment, setSelectedAppointment] = useState(null);
 
    // Popup Modal Form for Booking Appointment 
-   const [modalIsOpen, setModalIsOpen] = useState(false);
+   const [open, setOpen] = React.useState(false);
+   const handleClose = () => {
+      setOpen(false);
+   };
 
    const modalController = (selectedAppointmentId) => {
-      setModalIsOpen(true);
+      setOpen(true);
       const appointment = allAppointments.find(ap => ap.id === selectedAppointmentId);
       if(appointment){
          setSelectedAppointment(appointment)
@@ -59,6 +62,8 @@ const AppointmentTable = () => {
       makeBooking(data)
    };
 
+   
+
    return (
       <div className="appointments container py-5">
             <h3 className="text-primary text-center my-5">Available Appointments on {date.toLocaleString('default', { month: 'long' })} {date.getDate()}, {date.getFullYear()}</h3>
@@ -73,37 +78,28 @@ const AppointmentTable = () => {
             </div>
 
             {/* To Get Modal Box on Click Book Appointment Button */}
-            <Modal  isOpen={modalIsOpen}
-             onRequestClose={() => setModalIsOpen(false)} 
-             style={{
-                 overlay:{
-                     backgroundColor:"rgba(130,125,125,0.75)"
-                 },
-                 content : {
-                    top                   : '50%',
-                    left                  : '50%',
-                    right                 : 'auto',
-                    bottom                : 'auto',
-                    marginRight           : '-50%',
-                    width                 :  '40%',
-                    transform             : 'translate(-50%, -50%)'
-                  }
-             }}
-            >
-               {
-                  isBooked ?
-                  <div  className="text-center  py-5 my-5">
-                     <a href="/appointment-section" className="delete" onClick={ () => setModalIsOpen(false)}><i className="fas fa-times-circle"></i></a>
-                        <i className="fas fa-check-circle" style={{fontSize:"5em", color: 'green'}}></i>
-                        <h4 className="mt-5 lead">Appointment Request Sent!</h4>
-                  </div>
-                  
-                  :
-                  selectedAppointment &&
-                  <div className="px-4"> 
-                     <h4 className="text-primary text-center">{selectedAppointment.subject}</h4>
-                        <p className="text-center text-secondary  small mb-5">On {date.toLocaleString('default', { month: 'long' })} {date.getDate()}, {date.getFullYear()}</p>
-                     <form onSubmit={handleSubmit(onSubmit)}>
+            <div>
+               <Dialog
+               open={open}
+               onClose={handleClose}
+               aria-labelledby="alert-dialog-title"
+               aria-describedby="alert-dialog-description"
+               >
+               <DialogContent>
+                  <DialogContentText id="alert-dialog-description">
+                  {
+                     isBooked ?
+                     <div  className="text-center  py-5 my-5">
+                           <i className="fas fa-check-circle" style={{fontSize:"5em", color: 'green'}}></i>
+                           <h4 className="mt-5 lead">Appointment Request Sent!</h4>
+                     </div>
+                     
+                     :
+                     selectedAppointment &&
+                     <div className="px-md-3 px-lg-3"> 
+                        <h4 className="text-primary text-center">{selectedAppointment.subject}</h4>
+                           <p className="text-center text-secondary  small mb-3">On {date.toLocaleString('default', { month: 'long' })} {date.getDate()}, {date.getFullYear()}</p>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                            <div className="form-group">
                               <input type="text" ref={register({ required: true })} name="name" placeholder="Your Name" className="form-control"/>
                               {errors.name && <span className="text-danger">This field is required</span>}
@@ -119,7 +115,6 @@ const AppointmentTable = () => {
                            </div>
                            <div className="form-group row">
                               <div className="col-4">
-                                 
                                  <select className="form-control" name="gender" ref={register({ required: true })} >
                                        <option disabled={true} value="Selecte Gender">Select Gender</option>
                                        <option  value="Male">Male</option>
@@ -139,13 +134,25 @@ const AppointmentTable = () => {
                               </div>
                            </div>
                            
-                           <div className="form-group text-center">
+                           <div className="form-group text-center mb-0 pb-0">
                               <button type="submit" className="btn btn-primary">Send</button>
                            </div>
-                     </form>
-                  </div>
-               }
-            </Modal>
+                        </form>
+                     </div>
+                  }
+                  </DialogContentText>
+               </DialogContent>
+               <DialogActions>
+                  {
+                     isBooked ? <Button variant="outlined" color="secondary" onClick={handleClose} onClick={() => window.location.reload()}>
+                        Close
+                     </Button> : <Button variant="outlined" color="secondary" onClick={handleClose}>
+                        Disagree
+                     </Button>
+                  }
+               </DialogActions>
+               </Dialog>
+            </div>
 
         </div>
    );

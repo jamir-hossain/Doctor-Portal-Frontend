@@ -35,7 +35,7 @@ const DataTable = (props) => {
 
    let slNo = 1;
    return (
-      <div className="mt-5 bg-white rounded shadow-sm p-3">
+      <div className="mt-5 bg-white rounded shadow-sm p-3 d-none d-md-block d-lg-block">
          <table className="table table-borderless">
             <thead>
                <tr className="text-center">

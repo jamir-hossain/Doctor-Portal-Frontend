@@ -18,7 +18,7 @@ const Header = () => {
   }, []);
   
   return (
-      <nav  className={ (isSticky || isCollapsed) ? "slide in show shadow-md navbar navbar-expand-md bg-white navbar-light py-3 fixed-top" : "slide out show navbar navbar-expand-md bg-light navbar-light py-3 fixed-top"}>
+      <nav  className={ (isSticky || isCollapsed) ? "slide in show shadow-md navbar navbar-expand-md bg-light shadow-sm navbar-light py-3 fixed-top" : "slide out show navbar navbar-expand-md bg-light navbar-light py-3 fixed-top"}>
         <div className="container">
           <Link className="navbar-brand" to="/">Doctor's <strong>Portal</strong></Link>
           <button onClick={

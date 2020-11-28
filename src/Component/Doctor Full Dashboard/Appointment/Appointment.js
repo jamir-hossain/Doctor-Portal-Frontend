@@ -16,7 +16,7 @@ const Appointment = () => {
    return (
       <div className="container-fluid row">
          <Sidebar></Sidebar>
-         <div className="col-md-10 p-4 pr-5" style={{position:"absolute", right:0,backgroundColor: "#F4FDFB",height:"100%"}}>
+         <div className="col-9 col-sm-9 col-md-10 col-lg-10 p-4 pr-5" style={{position:"absolute", right:0,backgroundColor: "#F4FDFB",height:"100%"}}>
          <h5>Appointed Patient</h5>
          <div className='row mt-3'>
             <div className="col-md-6 py-5 pl-3">

@@ -6,6 +6,7 @@ import PrescriptionEditModal from './PrescriptionEditModal';
 import PrescriptionModal from './PrescriptionModal';
 import './Dashboard.css'
 import DashboardOverView from './DashboardOverView';
+import MobileDataTable from './MobileDataTable';
 
 const Dashboard = (props) => {
     const [appointedPatient, setAppointedPatient] = useContext(AllContext)
@@ -31,7 +32,7 @@ const Dashboard = (props) => {
     return (
         <div className="container-fluid row">
             <Sidebar></Sidebar>
-            <div className="col-md-10 p-4 pr-5" style={{position:"absolute", right:0,backgroundColor: "#F4FDFB",height:"100%"}}>
+            <div className="col-9 col-sm-9 col-md-10 col-lg-10 pr-sm-3 pr-md-3 pr-lg-5" style={{position:"absolute", right:0,backgroundColor: "#F4FDFB",height:"100%"}}>
             {
                 props.conditional === false ? <h5>Prescription</h5> : <h5>Dashboard</h5>
             }
@@ -43,7 +44,13 @@ const Dashboard = (props) => {
             openDataEditModal={openDataEditModal}
             conditional={props.conditional}
             ></DataTable>
-
+            <MobileDataTable 
+            openPrescriptionModal={openPrescriptionModal}
+            openDataEditModal={openDataEditModal}
+            conditional={props.conditional}
+            >
+            </MobileDataTable>
+            
             {/* Prescription Edit Modal For Patient */}
             <PrescriptionEditModal
             editModalIsOpen={editModalIsOpen}

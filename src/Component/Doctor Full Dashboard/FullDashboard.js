@@ -17,7 +17,7 @@ const FullDashboard = () => {
    return (
       <div>
          <div className="row fullRow">
-            <div className="sidebar justify-content-between col-md-2 py-5 px-4" style={{height:"100vh"}}>
+            <div className="sidebar justify-content-between col-1 col-sm-2 col-md-2 col-lg-2 py-5 px-4" style={{height:"100vh"}}>
                <ul>
                   <Link to="/dashboard"><li className="dashboardOption" onClick={() => setCategory("dashboard")}><i className="fas fa-grip-horizontal"></i> <span>Dashboard</span></li></Link>
                   <li className="dashboardOption" onClick={() => setCategory("appointment")}><i className="fas fa-calendar-alt"></i> <span>Appointment</span></li>
@@ -26,7 +26,7 @@ const FullDashboard = () => {
                   <li className="dashboardOption" onClick={() => setCategory("setting")}><i className="fas fa-cog"></i> <span>Setting</span></li>
                </ul>
             </div>
-            <div className='col-md-10 dashBoardContentBar'>
+            <div className='col-11 col-sm-11 col-md-10 col-lg-10 dashBoardContentBar'>
                <h3>Dashboard</h3>
                <div className="dashBoardContent">
                   {

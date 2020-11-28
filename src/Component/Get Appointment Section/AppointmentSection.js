@@ -7,7 +7,6 @@ import AppointmentTable from './AppointmentTable.js';
 
 const AppointmentSection = () => {
    
-
    return (
       <div className="appointment-section">
          <div className="container">

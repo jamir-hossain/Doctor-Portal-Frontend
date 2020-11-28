@@ -11,7 +11,7 @@ const Patient = () => {
    return (
       <div className="container-fluid row ">
          <Sidebar></Sidebar>
-         <div className="col-md-10 p-4 pr-5" style={{position:"absolute", right:0,backgroundColor: "#F4FDFB",height:"100%"}}>
+         <div className="col-9 col-sm-9 col-md-10 col-lg-10 p-4 pr-5" style={{position:"absolute", right:0,backgroundColor: "#F4FDFB",height:"100%"}}>
          <h4>Patient Info</h4>
          <div className="mt-5 bg-white rounded shadow-sm p-3">
             <table className="table table-borderless">
