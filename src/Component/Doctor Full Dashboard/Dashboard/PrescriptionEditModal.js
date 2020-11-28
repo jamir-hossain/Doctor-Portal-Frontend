@@ -28,47 +28,6 @@ const PrescriptionEditModal = (props) => {
   };
 
    return (
-      // <Modal  isOpen={props.editModalIsOpen}
-      // onRequestClose={() => props.setEditModalIsOpen(false)} 
-      // style={{
-      //    overlay:{
-      //       backgroundColor:"rgba(130,125,125,0.75)"
-      //    },
-      //    content : {
-      //       top                   : '50%',
-      //       left                  : '50%',
-      //       right                 : 'auto',
-      //       bottom                : 'auto',
-      //       marginRight           : '-50%',
-      //       width                 :  '40%',
-      //       transform             : 'translate(-50%, -50%)'
-      //    }
-      // }}>
-      
-      //    {props.selectedPatient &&
-      //    <form className="px-5 my-3" onSubmit={handleSubmit(onSubmit)}>
-      //       <h5 className="text-primary text-center mb-5">{props.selectedPatient.name}'s Appointment</h5>
-      //       <div className="form-group row">
-      //             <label htmlFor="" className="col-4">Date</label>
-      //             <input type="text" defaultValue={props.selectedPatient.bookingDate} ref={register({ required: true })} name="date" className="form-control col-8"/>
-      //             <div className="col-12">
-      //                {errors.date && <span className="text-danger">Appointment date must not empty ! <br/></span>}
-      //             </div>
-      //       </div>
-      //       <div className="form-group row">
-      //             <label htmlFor="" className="col-4">Time</label>
-      //             <input type="text" defaultValue={props.selectedPatient.time} ref={register({ required: true })} name="time" className="form-control col-8"/>
-      //             <div className="col-12">
-      //                {errors.time && <span className="text-danger">Appointment time must not empty ! <br/></span>}
-      //             </div>
-      //       </div>
-      //       <div className="form-group text-right">
-      //             <input type="hidden"  value={props.selectedPatient._id} ref={register({ required: true })} name="id"/>
-      //             <button type="submit" className="btn btn-primary">Update</button>
-      //       </div>
-      //    </form>
-      //    }
-      // </Modal>
       <div>
          <Dialog
           open={props.editModalIsOpen}
